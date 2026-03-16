@@ -1,0 +1,214 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top right, rgba(183, 28, 28, 0.08), transparent 20%),
+    linear-gradient(180deg, #f7f8fa 0%, #eef1f5 100%);
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border: 1px solid #eceff3;
+  border-radius: 24px;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  padding: 28px;
+}
+
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #b71c1c;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.statusBox {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.statusLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.statusValue {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.statusOpen {
+  color: #2e7d32;
+}
+
+.statusClosed {
+  color: #b71c1c;
+}
+
+.errorBox {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.semaforo {
+  width: 110px;
+  height: 250px;
+  margin: 0 auto 28px;
+  background: #111827;
+  border-radius: 28px;
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.22);
+  padding: 22px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.luz {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.vermelha {
+  background: #ef4444;
+}
+
+.verde {
+  background: #22c55e;
+}
+
+.ligada.vermelha {
+  opacity: 1;
+  box-shadow: 0 0 22px rgba(239, 68, 68, 0.8);
+}
+
+.ligada.verde {
+  opacity: 1;
+  box-shadow: 0 0 22px rgba(34, 197, 94, 0.8);
+}
+
+.desligada {
+  opacity: 0.2;
+  box-shadow: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button {
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.buttonOpen {
+  background: #2e7d32;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.18);
+}
+
+.buttonClose {
+  background: #b71c1c;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(183, 28, 28, 0.18);
+}
+
+.buttonSecondary {
+  background: #fff;
+  color: #334155;
+  border: 1px solid #dbe2ea;
+}
+
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+  z-index: 9999;
+}
+
+.snackbarShow {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.snackbarSuccess {
+  background: #2e7d32;
+}
+
+.snackbarError {
+  background: #b71c1c;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .statusValue {
+    font-size: 22px;
+  }
+}
